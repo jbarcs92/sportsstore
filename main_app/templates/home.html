@@ -1,6 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Home</h1>
+<div class="container">
+    <div class="card-columns">
+        <div class="card" style="width:400px">
+            <img class="card-img-top" src="../static/Images/football/football.jpg" alt="Football image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">Football Equipment</h4>
+                <a href="{% url 'footballindex' %}" class="stretched-link"></a>
+            </div>
+        </div>
+
+        <div class="card" style="width:400px">
+            <img class="card-img-top" src="../static/Images/baseball/balls.jpg" alt="Baseball image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">Baseball Equipment</h4>
+                <a href="{% url 'baseballindex' %}" class="stretched-link"></a>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 {% endblock %}
