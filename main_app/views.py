@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Football
 from .models import Baseball
 from .models import Basketball
@@ -80,3 +81,75 @@ def soccer_detail(request, mma_id):
     return render(request, 'soccer/detail.html', {
         'soccer': soccer
     })
+
+class FootballCreate(CreateView):
+  model = Football
+  fields = '__all__'
+
+class BaseballCreate(CreateView):
+  model = Baseball
+  fields = '__all__'
+
+class BasketballCreate(CreateView):
+  model = Basketball
+  fields = '__all__'
+
+class HockeyCreate(CreateView):
+  model = Hockey
+  fields = '__all__'
+
+class MmaCreate(CreateView):
+  model = Mma
+  fields = '__all__'
+
+class SoccerCreate(CreateView):
+  model = Soccer
+  fields = '__all__'
+
+class FootballUpdate(UpdateView):
+  model = Football
+  fields = ['name', 'brand', 'description', 'quantity', 'price']
+
+class BaseballUpdate(UpdateView):
+  model = Baseball
+  fields = ['name', 'brand', 'description', 'quantity', 'price']
+
+class BasketballUpdate(UpdateView):
+  model = Basketball
+  fields = ['name', 'brand', 'description', 'quantity', 'price']
+
+class HockeyUpdate(UpdateView):
+  model = Hockey
+  fields = ['name', 'brand', 'description', 'quantity', 'price']
+
+class MmaUpdate(UpdateView):
+  model = Mma
+  fields = ['name', 'brand', 'description', 'quantity', 'price']
+
+class SoccerUpdate(UpdateView):
+  model = Soccer
+  fields = ['name', 'brand', 'description', 'quantity', 'price']
+
+class FootballDelete(DeleteView):
+  model = Football
+  success_url = '/football'
+
+class BaseballDelete(DeleteView):
+  model = Baseball
+  success_url = '/baseball'
+
+class BasketballDelete(DeleteView):
+  model = Basketball
+  success_url = '/basketball'
+
+class HockeyDelete(DeleteView):
+  model = Hockey
+  success_url = '/hockey'
+
+class MmaDelete(DeleteView):
+  model = Mma
+  success_url = '/mma'
+
+class SoccerDelete(DeleteView):
+  model = Soccer
+  success_url = '/soccer'

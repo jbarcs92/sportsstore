@@ -1,6 +1,53 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Home</h1>
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="card bg-light border-dark mb-3 mt-5" style="width:300px">
+            <img class="card-img-top" src="../static/Images/football/football.jpg" alt="Football image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title" style="margin-top:90px">Football Equipment</h4>
+                <a href="{% url 'footballindex' %}" class="stretched-link"></a>
+            </div>
+        </div>
+        <div class="card bg-light border-dark mb-3 mt-5" style="width:300px;margin-left:20px;margin-right:20px">
+            <img class="card-img-top" src="../static/Images/baseball/bat.jpg" alt="Baseball image" style="width:100%;">
+            <div class="card-body">
+                <h4 class="card-title" style="margin-top:5px">Baseball Equipment</h4>
+                <a href="{% url 'baseballindex' %}" class="stretched-link"></a>
+            </div>
+        </div>
+        <div class="card bg-light border-dark mb-3 mt-5" style="width:300px">
+            <img class="card-img-top" src="../static/Images/basketball/ball.jpg" alt="Basketball image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">Basketball Equipment</h4>
+                <a href="{% url 'basketballindex' %}" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="card bg-light border-dark mb-3" style="width:300px">
+            <img class="card-img-top" src="../static/Images/hockey/skates.jpg" alt="Hockey image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title" style="margin-top:50px">Hockey Equipment</h4>
+                <a href="{% url 'hockeyindex' %}" class="stretched-link"></a>
+            </div>
+        </div>
+        <div class="card bg-light border-dark mb-3" style="width:300px;margin-left:20px;margin-right:20px">
+            <img class="card-img-top" src="../static/Images/mma/gloves.jpg" alt="Mma image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">MMA Equipment</h4>
+                <a href="{% url 'mmaindex' %}" class="stretched-link"></a>
+            </div>
+        </div>
+        <div class="card bg-light border-dark mb-3" style="width:300px">
+            <img class="card-img-top" src="../static/Images/soccer/ball.jpg" alt="Soccer image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title" style="margin-top:20px">Soccer Equipment</h4>
+                <a href="{% url 'soccerindex' %}" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
