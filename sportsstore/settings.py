@@ -78,6 +78,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'sportsstore',
+        'USER': 'postgres',
+        'PASSWORD': 'Randytorres18', 
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
