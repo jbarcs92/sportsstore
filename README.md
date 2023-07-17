@@ -1,49 +1,28 @@
 # Project Title
 
-Simple overview of use/purpose.
+Peak of Sporting Goods
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Inventory database for a sporting goods store
 
-## Getting Started
+## Technologies Used
 
-### Dependencies
+Python, Django, CSS, and Bootstrap
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+## Project Link
 
-### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
 
 ## Authors
 
-Contributors names and contact info
+Randy Paulus
+Jarrod Barclay
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+## Next Steps
 
-## Version History
+Ability to upload and display images, add additional sports, add subcategories for each sport
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+## Screenshots
+
+![Screenshot 2023-07-17 at 11 06 40 AM](https://github.com/jbarcs92/sportsstore/assets/133605045/c1b33c2a-e23c-41df-99a2-c7954285a3f8)
