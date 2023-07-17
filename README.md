@@ -1,6 +1,6 @@
 # Project Title
 
-Peak of Sporting Goods
+Peak Sporting Goods
 
 ## Description
 
