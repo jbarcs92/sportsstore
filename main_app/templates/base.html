@@ -11,15 +11,24 @@
 </head>
 <body>
     <header>
-
+        <nav>
+            <a href="{% url 'home' %}" class="btn btn-outline-light" role="button">Home</a>
+            <form class="navbar-form navbar-left" action="/action_page.php">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-outline-light" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </nav>
+        <h1 class="display-1 text-white font-weight-bold">SPORTING GOODS</h1>
     </header>
     <main>
         {% block content %}
         {% endblock %}
-    </main>
-    <footer>
-
-    </footer>
-    
+    </main>  
 </body>
 </html>
