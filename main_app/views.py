@@ -76,8 +76,8 @@ def mma_detail(request, mma_id):
         'mma': mma
     })
 
-def soccer_detail(request, mma_id):
-    mma = Soccer.objects.get(id=soccer_id)
+def soccer_detail(request, soccer_id):
+    soccer = Soccer.objects.get(id=soccer_id)
     return render(request, 'soccer/detail.html', {
         'soccer': soccer
     })
