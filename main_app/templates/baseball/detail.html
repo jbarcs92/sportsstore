@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ baseball.name }} Details</h1>
+
+<div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ baseball.name }}</span>
+      <p>Brand: {{ baseball.brand }}</p>
+      <p>Description: {{ baseball.description|linebreaks }}</p>
+      <p>Quantity: {{ baseball.quantity }}</p>
+      <p>Price: ${{ baseball.price }}</p>
+    </div>
+    <div class="card-action">
+        <a href="{% url 'baseball_update' baseball.id %}" class="btn btn-outline-warning" role="button">Edit</a> 
+        <a href="{% url 'baseball_delete' baseball.id %}" class="btn btn-outline-danger" role="button">Delete</a> 
+        <a href="{% url 'baseballindex' %}" class="btn btn-outline-success" role="button">Return</a> 
+    </div>
+</div>
+
+{% endblock %}

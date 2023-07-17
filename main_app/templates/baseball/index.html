@@ -1,6 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Baseball index</h1>
+<h1>Baseball Equipment</h1>
+
+{% for baseball in baseballs %}
+  <a href="{% url 'baseballdetail' baseball.id %}" class="baseballindex">
+    <div class="card">
+        <div class="card-content">
+          <span class="card-title">{{ baseball.name }}</span>
+          <p>Brand: {{ baseball.brand }}</p>
+          <p>Description: {{ baseball.description|linebreaks }}</p>
+          <p>Quantity: {{ baseball.quantity }}</p>
+          <p>Price: ${{ baseball.price }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+<a href="{% url 'baseball_create' %}" class="btn btn-outline-success" role="button">Add Equipment</a>
 
 {% endblock %}
