@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+  .card{
+    padding-left: 20px;
+    font-family: 'Roboto Slab', serif;
+  }
+  
+  h1{
+    margin-left: 25px;
+    margin-top: 15px;
+    font-family: 'Roboto Slab', serif;  
+  }
+  .card-content{
+    font-size: 17px;
+  }
+  .title2{
+  font-weight: bold;
+}
+</style>
+
+<h1>{{ soccer.name }} Details</h1>
+
+<div class="card">
+    <div class="card-content">
+      <br>
+      <p><span class="title2">Brand:</span> {{ soccer.brand }}</p>
+      <p><span class="title2">Description:</span> {{ soccer.description|linebreaks }}</p>
+      <p><span class="title2">Quantity:</span> {{ soccer.quantity }}</p>
+      <p><span class="title2">Price:</span> ${{ soccer.price }}</p>
+    </div>
+    <br>
+    <div class="card-action">
+        <a href="{% url 'soccer_update' soccer.id %}" class="btn btn-outline-warning" role="button">Edit</a> 
+        <a href="{% url 'soccer_delete' soccer.id %}" class="btn btn-outline-danger" role="button">Delete</a> 
+        <a href="{% url 'soccerindex' %}" class="btn btn-outline-success" role="button">Return</a> 
+    </div>
+</div>
+
+{% endblock %}

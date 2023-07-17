@@ -1,190 +1,62 @@
-{% load static %}
+{% extends 'base.html' %}
+{% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
-        /* font-family: 'Lora', serif; */
-        /* in case i want this fonts */
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
-        .container {
-        display: flex;
-        height: 700px;
-        margin-left: 20px;
-        }
-        .item{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 300px;
-        height: 350px;
-        margin-left: 35px;
-        }
-        .parent {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 10px; 
-        grid-row-gap: 10px;
-        margin-left: 200px;
-        }
-        .sidebar {
-        height:125%;
-        width: 220px; 
-        background-color: #f1f1f1;
-        }
+  .card-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+.brand,
+.des {
+    grid-column: 2; 
+    font-family: 'Roboto Slab', serif;  
+    font-size: 17px;
+}
+.des {
+    white-space: normal; 
+}
+.quantity,
+.price {
+    grid-column: 3; 
+    font-family: 'Roboto Slab', serif;  
+    font-size: 17px;
 
-        .sidebar ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        font-size: 20px;
-        font-family: 'Lora', serif;
-        }
+}
+.card-title{
+  font-size: 25px;
 
-        .sidebar ul li {
-        padding: 8px 16px;
-        border-bottom: 2px solid #b1b1b1;
-        }
+}
+.footballindex{
+  text-decoration: none;
+}
+.title2{
+  font-weight: bold;
+}
+</style>
 
-        .sidebar ul li:last-child {
-        border-bottom: none;
-        }
+<h1>Football Equipment</h1>
 
-        .sidebar ul li a {
-        color: #333;
-        text-decoration: none;
-        }
-
-        .sidebar ul li a:hover {
-        color: #000;
-        font-weight: bold;
-        }
-        .dropdown-menu {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        padding: 0;
-        }
-
-        .sidebar ul li:hover .dropdown-menu {
-        display: block;
-        }
-
-        .dropdown-menu li {
-        padding: 8px 16px;
-        }
-
-        .dropdown-menu li a {
-        color: #333;
-        text-decoration: none;
-        }
-
-        .dropdown-menu li a:hover {
-        color: #000;
-        font-weight: bold;
-        }
-
-        #drill{
-            background-color: #fbfbfb;
-        }
-        #blocking{
-            background-color: #fbfbfb;
-        }
-        #gloves{
-            background-color: #fbfbfb;
-        }
-        #helmet{
-            background-color: #fbfbfb;
-        }
-        #shoulders{
-            background-color: #fbfbfb;
-        }
-        #pads{
-            background-color: #fbfbfb;
-        }
-        #name{
-            font-family: 'Lora', serif;
-            text-decoration: none;
-            color: rgb(0, 0, 0);
-            font-size: 30px;
-            margin-top: 15px;
-        }
-        #pics{
-            width: 200;
-            height: 200px;
-        }
-
-    </style>
-</head>
-<body>
-
-    <div class="container">
-
-        <div class="sidebar">
-            <ul>
-            <li><a href="#">Home</a></li>
-            <li>
-                <a href="#">About</a>
-                <ul class="dropdown-menu">
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Mission</a></li>
-                <li><a href="#">Vision</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Services</a>
-                <ul class="dropdown-menu">
-                <li><a href="#">Shipping information</a></li>
-                <li><a href="#">Cancel order</a></li>
-                <li><a href="#">Locations</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Help & Contact</a></li>
-            <li><a href="#"></a></li>
-            </ul>
+{% for football in footballs %}
+  <a href="{% url 'footballdetail' football.id %}" class="footballindex">
+    <div class="card">
+        <div class="card-content">
+          <span class="card-title">{{ football.name }}</span>
+          <p class="brand"><span class="title2">Brand:</span> {{ football.brand }}</p>
+          <p class="des"><span class="title2">Description:</span> {{ football.description|linebreaksbr }}</p>
+          <p class="quantity"><span class="title2">Quantity:</span> {{ football.quantity }}</p>
+          <p class="price"><span class="title2">Price:</span> ${{ football.price }}</p>
         </div>
-        
-        <div class="parent">
-            
-            <div id="drill" class="item">
-                <img src="/static/Images/football/drill equipment.jpg" alt="" id="pics">
-                <a href="" id="name"> Drill equipment</a>
-            </div>
-            <div id="blocking" class="item">
-                <img src="/static/Images/football/Blocking Pads.jpg" alt="" id="pics">
-               <a href="" id="name">Blocking pads</a> 
-            </div>
-            <div id="gloves" class="item">
-                <img src="/static/Images/football/footbal gloves.jpg" alt="" id="pics">
-                <a href="" id="name">Gloves</a>
-            </div>
-            <div id="helmet" class="item">
-                <img src="/static/Images/football/heltmet.jpg" alt="" id="pics">
-               <a href="" id="name">Helmet</a> 
-            </div>
-            <div id="shoulders" class="item">
-                <img src="/static/Images/football/shoulder pads.jpg" alt="" id="pics">
-               <a href="" id="name">Shoulders Pads</a> 
-            </div>
-            <div id="pads" class="item">
-                <img src="/static/Images/football/Pad Set.jpeg" alt="" id="pics">
-                <a href="" id="name">Pads Sets</a>
-            </div>
-        </div>
-
     </div>
+  </a> 
+{% endfor %}
+<a href="{% url 'football_create' %}" class="btn btn-outline-success" role="button">Add Equipment</a>
 
-</body>
-</html>
-
-
-
-
+{% endblock %}
 
 
 
