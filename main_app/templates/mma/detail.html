@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+  .card{
+    padding-left: 20px;
+    font-family: 'Roboto Slab', serif;
+  }
+  
+  h1{
+    margin-left: 25px;
+    margin-top: 15px;
+    font-family: 'Roboto Slab', serif;  
+  }
+  .card-content{
+    font-size: 17px;
+  }
+  .title2{
+  font-weight: bold;
+}
+</style>
+
+<h1>{{ mma.name }} Details</h1>
+
+<div class="card">
+    <div class="card-content">
+      <br>
+      <p><span class="title2">Brand:</span> {{ mma.brand }}</p>
+      <p><span class="title2">Description:</span> {{ mma.description|linebreaks }}</p>
+      <p><span class="title2">Quantity:</span> {{ mma.quantity }}</p>
+      <p><span class="title2">Price:</span> ${{ mma.price }}</p>
+    </div>
+    <br>
+    <div class="card-action">
+        <a href="{% url 'mma_update' mma.id %}" class="btn btn-outline-warning" role="button">Edit</a> 
+        <a href="{% url 'mma_delete' mma.id %}" class="btn btn-outline-danger" role="button">Delete</a> 
+        <a href="{% url 'mmaindex' %}" class="btn btn-outline-success" role="button">Return</a> 
+    </div>
+</div>
+
+{% endblock %}

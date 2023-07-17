@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ 
+<style>
+    .content{
+        margin-left: 20px;
+    }
+    .h1{
+        margin-left: 25px;
+    }
+    </style>
+
+{% if object %}
+  <h1>Edit{{ object.name }}</h1>
+{% else %}
+  <h1 class="h1">Add Equipment</h1>
+{% endif %}
+<br>
+<div class="content">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <br>
+        <input type="submit" value="Submit!" class="btn btn-outline-success">
+    </form>
+</div>
+{% endblock %}

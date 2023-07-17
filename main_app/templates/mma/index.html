@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+  .card-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding-left: 15px;
+  }
+.brand,
+.des {
+    grid-column: 2; 
+    font-family: 'Roboto Slab', serif;  
+    font-size: 17px;
+}
+.des {
+    white-space: normal; 
+}
+.quantity,
+.price {
+    grid-column: 3; 
+    font-family: 'Roboto Slab', serif;  
+    font-size: 17px;
+
+}
+.card-title{
+  font-size: 30px;
+
+}
+.mmaindex{
+  text-decoration: none;
+
+}
+.title2{
+  font-weight: bold;
+}
+.h1{
+  margin-left: 15px;
+}
+</style>
+
+<h1 class="h1">mma Equipment</h1>
+
+{% for mma in mmas %}
+  <a href="{% url 'mmadetail' mma.id %}" class="mmaindex">
+    <div class="card">
+        <div class="card-content">
+          <span class="card-title">{{ mma.name }}</span>
+          <p class="brand"><span class="title2">Brand:</span> {{ mma.brand }}</p>
+          <p class="des"><span class="title2">Description:</span> {{ mma.description|linebreaksbr }}</p>
+          <p class="quantity"><span class="title2">Quantity:</span> {{ mma.quantity }}</p>
+          <p class="price"><span class="title2">Price:</span> ${{ mma.price }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+
+<a href="{% url 'mma_create' %}" class="btn btn-outline-success" role="button">Add Equipment</a>
+
+{% endblock %}

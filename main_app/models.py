@@ -62,7 +62,7 @@ class Mma(models.Model):
   brand = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
   quantity = models.IntegerField()
-  price = models.DecimalField(max_digits=10, decimal_places=2)
+  price = models.DecimalField(max_digits=10,decimal_places=2)
 
 
   def __str__(self):
@@ -76,7 +76,7 @@ class Soccer(models.Model):
   brand = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
   quantity = models.IntegerField()
-  price = models.DecimalField(max_digits=10, decimal_places=2)
+  price = models.DecimalField(max_digits=10,decimal_places=2)
 
 
   def __str__(self):

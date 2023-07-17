@@ -1,16 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<style>
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+  .card{
+    padding-left: 20px;
+    font-family: 'Roboto Slab', serif;
+  }
+  
+  h1{
+    margin-left: 25px;
+    margin-top: 15px;
+    font-family: 'Roboto Slab', serif;  
+  }
+  .card-content{
+    font-size: 17px;
+  }
+.title2{
+  font-weight: bold;
+}
+</style>
+
 <h1>{{ baseball.name }} Details</h1>
 
 <div class="card">
     <div class="card-content">
-      <span class="card-title">{{ baseball.name }}</span>
-      <p>Brand: {{ baseball.brand }}</p>
-      <p>Description: {{ baseball.description|linebreaks }}</p>
-      <p>Quantity: {{ baseball.quantity }}</p>
-      <p>Price: ${{ baseball.price }}</p>
+      <br>
+      <p><span class="title2">Brand:</span> {{ baseball.brand }}</p>
+      <p><span class="title2">Description:</span> {{ baseball.description|linebreaks }}</p>
+      <p><span class="title2">Quantity:</span> {{ baseball.quantity }}</p>
+      <p><span class="title2">Price:</span> ${{ baseball.price }}</p>
     </div>
+    <br>
     <div class="card-action">
         <a href="{% url 'baseball_update' baseball.id %}" class="btn btn-outline-warning" role="button">Edit</a> 
         <a href="{% url 'baseball_delete' baseball.id %}" class="btn btn-outline-danger" role="button">Delete</a> 
@@ -18,4 +42,4 @@
     </div>
 </div>
 
-{% endblock %}
+{% endblock %} 
