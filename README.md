@@ -4,7 +4,7 @@ Peak of Sporting Goods
 
 ## Description
 
-Inventory database for a sporting goods store
+Inventory database for a sporting goods store. Employees are able to add new inventory, edit individual items (e.g. update the quantities), and delete them, if an item should sell out. Within the main database, there are models for football, baseball, mma, hockey, basketball, and soccer. 
 
 ## Technologies Used
 
