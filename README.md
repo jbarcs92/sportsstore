@@ -16,7 +16,7 @@ Python, Django, CSS, and Bootstrap
 
 ## Authors
 
-Randy Paulus
+Randy Paulus <br>
 Jarrod Barclay
 
 ## Next Steps
