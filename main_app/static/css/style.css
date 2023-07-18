@@ -1,0 +1,28 @@
+
+header {
+    background-color: rgb(77, 182, 217);
+    display: flex;
+}
+
+header > nav {
+    display: flex;
+}
+
+header > nav > a {
+    height: 40px;
+    margin-top: 60px;
+}
+
+header > nav > form > div {
+    padding-left: 50px;
+    margin-top: 60px;
+}
+
+header > nav > form > div > div > button {
+    padding-left: 50px;
+}
+
+header > h1 {
+    padding-left: 400px;
+}
+
